@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head - Hidden Section-->
+
+<head>
+    <title>Hola Apparel &trade; Co.</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Typography/Icons-->
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!--My CSS-->
+    <link rel="stylesheet" type="text/css" href="shop.css">
+</head>
+<!--Body - Visible Section-->
+
+<body ng-app="HolaApp">
+    <!--Site Header - Make Fixed-->
+    <header id="site-header" class="site-header container" ng-controller="CartController">
+        <!--Add logos in svg-->
+        <section class="site-header-flex">
+            <div class="company-logo">
+                <img src="images/Hola-logo.svg" alt="Hola Apparel Co.">
+            </div>
+            <div class="shopping-cart">
+                <a href="cart.html"><img src="images/cart-icon.svg" class="cart" alt="Shopping Cart"></a>
+                <div id="cart-counter" class="cart-counter">
+                    <p id="counter" class="counter" type="number"></p>
+                </div>
+            </div>
+            <div class="navigation-bar">
+                <nav class="navigation-top">
+                    <ul>
+                        <li><a href="homepage.html" name="About">Home</a></li>
+                        <li><a href="homepage.html #products" name="Shop">Shop</a></li>
+                        <li><a href="homepage.html #highlights" name="Featured">Featured</a></li>
+                        <li><a href="homepage.html #signup" name="Updates">Updates</a></li>
+                        <li id="searchbar">
+                            <div  ng-controller="Searchctrl">
+                                <input type="text" ng-model="Query" placeholder="Search for Items" ng-focus="showlist=true" ng-blur="showlist=false">
+                                <ul class="search-list" ng-show="showlist">
+                                    <li ng-repeat="product in products| filter: Query" class="listitems"><a href={{product.href}}>{{product.name}}</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                </nav>
+            </div>  
+        </section>
+    </header>
+    <h2 id="shop-title">
+        Our
+        <span class="emboss">
+            Collection
+        </span>
+    </h2>
+    <!-- Section 4 - Featured Products -->
+<section id="highlights" class="highlights container" ng-controller="ProductController">
+    <div class="highlights-content">        
+        <div id="Collection" class="Collection">
+            <h2 id="Women">
+                Women / Señora
+            </h2>
+                <div class="row">       
+                    <div class="cell">
+                        <img src="images/checked-stretch-dress.jpg" alt="Red color checked stretch dress">
+                        <p class="product-type">
+                        Dresses
+                        </p>
+                        <h3>
+                            Checked Stretch Dress
+                        </h3>
+                        <p class="product-price">
+                            INR30
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/blue-silk-dress.jpg" alt="Blue silk dress">
+                        <p class="product-type">
+                            Dresses
+                        </p>
+                        <h3>
+                            Blue Silk Dress
+                        </h3>
+                        <p class="product-price">
+                            INR119
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/stretch-knit-dress.jpg" alt="stretch-knit-dress">
+                        <p class="product-type">
+                            Dresses
+                        </p>
+                        <h3>
+                            Stretch Knit Dress
+                        </h3>
+                        <p class="product-price">
+                            INR169
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        <img src="images/pink-floral.jpg" alt="pink-floral-dress">
+                        <p class="product-type">
+                            Dresses
+                        </p>
+                        <h3>
+                            Pink Floral Dress
+                        </h3>
+                        <p class="product-price">
+                            INR99
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/pink-dotted-dress.jpg" alt="pink-dotted-dress">
+                        <p class="product-type">
+                            Dresses
+                        </p>
+                        <h3>
+                            Pink Spotted Dress
+                        </h3>
+                        <p class="product-price">
+                            INR99
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/demin-overall-shorts.jpg" alt="demin-overall-shorts">
+                        <p class="product-type">
+                            Overalls
+                        </p>
+                        <h3>
+                            Short Denim Overall
+                        </h3>
+                        <p class="product-price">
+                            INR89
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <h2 id="Men">
+                    Men / Señor
+                </h2>
+                <div class="row">  
+                    <div class="cell">
+                        <img src="images/cotton-blue-shirt.jpg" alt="cotton-blue-shirt">
+                        <p class="product-type">
+                            Shirts
+                        </p>
+                        <h3>
+                            Cotton Denim Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR13
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    
+                    <div class="cell">
+                        <img src="images/cotton-yellow-tshirt.jpg" alt="cotton-yellow-tshirt">
+                        <p class="product-type">
+                            Shirts
+                        </p>
+                        <h3>
+                            Cotton Yellow T-Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR39
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/blue-striped.jpg">
+                        <p class="product-type">
+                            SHIRTS
+                        </p>
+                        <h3>
+                            Blue Striped Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR20
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="row">  
+                    <div class="cell">
+                        <img src="images/rustic.jpeg" alt="cotton-blue-shirt">
+                        <p class="product-type">
+                            Shirts
+                        </p>
+                        <h3>
+                            Cotton Rustic Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR30
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/rustic-grey.jpeg" alt="cotton-yellow-tshirt">
+                        <p class="product-type">
+                            Shirts
+                        </p>
+                        <h3>
+                            Cotton Grey Rustic T-Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR35
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    <div class="cell">
+                        <img src="images/White.jpeg">
+                        <p class="product-type">
+                            SHIRTS
+                        </p>
+                        <h3>
+                            Blue Striped Shirt
+                        </h3>
+                        <p class="product-price">
+                            INR20
+                        </p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <h2 id="Bags">
+                    Bags / Bolsas
+                </h2>
+                <div class="row">
+                        <div class="cell">
+                            <img src="images/blue-hipster-backpack.jpg" alt="blue-hipster-backpack">
+                            <p class="product-type">
+                                Backpacks
+                            </p>
+                            <h3>
+                                #NotRED&trade; Hipster Backpack
+                            </h3>
+                            <p class="product-price">
+                                INR69
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                        <div class="cell">
+                            <img src="images/blue-bag.jpeg" alt="blue-hipster-backpack">
+                            <p class="product-type">
+                                Bags
+                            </p>
+                            <h3>
+                                Blue Pouch Bag
+                            </h3>
+                            <p class="product-price">
+                                INR60
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                        <div class="cell">
+                            <img src="images/tote.jpeg" alt="blue-hipster-backpack">
+                            <p class="product-type">
+                                Bags
+                            </p>
+                            <h3>
+                                Jute Bag
+                            </h3>
+                            <p class="product-price">
+                                INR20
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <h2 id="Glasses">
+                        Glasses / Anteojos
+                    </h2>
+                    <div class="row">
+                        <div class="cell">
+                            <img src="images/glasses.jpeg">
+                            <p class="product-type">
+                                Glasses
+                            </p>
+                            <h3>
+                                Matt
+                            </h3>
+                            <p class="product-price">
+                                INR12
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                        <div class="cell">
+                            <img src="images/brown-blue.jpeg">
+                            <p class="product-type">
+                                Glasses
+                            </p>
+                            <h3>
+                                Blue Quartz
+                            </h3>
+                            <p class="product-price">
+                                INR19
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                        <div class="cell">
+                            <img src="images/cateye.jpeg">
+                            <p class="product-type">
+                                Glasses
+                            </p>
+                            <h3>
+                                Cateye Orange
+                            </h3>
+                            <p class="product-price">
+                                INR25
+                            </p>
+                            <button class="add-to-cart-button">Add to Cart</button>
+                        </div>
+                </div>
+        </div>
+</section>
+    <!--Site Footer-->
+    <footer id="site-footer" class="site-footer container">
+        <section class="site-footer-flex">
+            <div class="footer-text">
+                <div class="copyright">
+                    <p>&copy; 2019 Hola Apparel&trade; Co.</p>
+                    <p>Powered by HTML, CSS with a touch of JavaScript, Angular JS and Node JS</p>
+                </div>
+                <div class="contact">
+                    <p>64545454545</p>
+                    <a href="mailto:info@Holaapparel.com" target="_blank" name="Email">
+                        info@Holaapparel.com
+                    </a>
+                </div>
+                <div class="address">
+                    <p>UPES, DEHRADUN <br /> UTTRAKHAND, INDIA</p>
+                </div>
+            </div>
+            <div class="social-media">
+                <ul class="social-media-list">
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <i class="fab fa-facebook"></i>
+                            <span class="social-media-name">
+                                Facebook
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/">
+                            <i class="fab fa-twitter"></i>
+                            <span class="social-media-name">
+                                Twitter
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/">
+                            <i class="fab fa-instagram"></i>
+                            <span class="social-media-name">
+                                Instagram
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/">
+                            <i class="fab fa-pinterest"></i>
+                            <span class="social-media-name">
+                                Pinterest
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+    <!-- ECMAscript -->
+    <script src="shop.js">
+    </script>
+</body>
+
+</html>
+<!--The End of this document-->
